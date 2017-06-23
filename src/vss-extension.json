@@ -1,0 +1,81 @@
+{
+	"manifestVersion": 1,
+	"id": "ClusterServiceTasks",
+	"version": "1.0.0",
+	"name": "Cluster Service Tasks",
+	"description": "VSTS/TFS tasks for cluster service.",
+	"author": "Carlos Henrique Gandarez",
+	"publisher": "gandarez",
+	"public": true,
+	"baseUri": "https://github.com/gandarez/",	
+	"targets": [
+		{
+			"id": "Microsoft.TeamFoundation.Server"
+			}
+		],
+	"icons": {
+		"default": "images/icon.png"
+	 },
+	 "categories": [
+		"Build and release"
+	],
+	"tags": [
+		"build",            
+		"release",
+		"task",
+		"windows service",
+		"cluster"
+	],
+	"content": {
+		"details": {
+			"path": "overview.md"
+		},
+		"license": {
+			"path": "license.md"
+		}
+	},		
+	"links": {
+		"home": {
+			"uri": "https://github.com/gandarez/VSTS.ClusterServiceTasks"
+		},
+		"learn": {
+			"uri": "https://github.com/gandarez/VSTS.ClusterServiceTasks"
+		},
+		"support": {
+			"uri": "https://github.com/gandarez/VSTS.ClusterServiceTasks/issues"
+		},
+		"repository": {
+			"uri": "https://github.com/gandarez/VSTS.ClusterServiceTasks"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"uri": "https://github.com/gandarez/VSTS.ClusterServiceTasks"
+	},
+	"files": [
+		{ "path": "StartGenericServiceCluster" },
+		{ "path": "StopGenericServiceCluster" }			
+	],
+	"contributions": [
+		{
+			"id": "ClusterServiceTasks-StartGenericWinServiceCluster",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "StartGenericServiceCluster"
+			}
+		},
+		{
+			"id": "ClusterServiceTasks-StopGenericWinServiceCluster",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "StopGenericServiceCluster"
+			}
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"id": "20d6a573-760f-4cd3-94c9-294ad0faf36f",
+	"name": "StopGenericServiceCluster",
+	"friendlyName": "Windows Service Cluster - Stop",
+	"description": "Stop a windows service in a cluster service",
+	"author": "Carlos Henrique Gandarez",
+	"helpMarkDown": "",
+	"category": "Deploy",
+	"visibility": [
+		"Release"
+	],	
+	"version": {
+		"Major": "1",
+		"Minor": "0",
+		"Patch": "0"
+	},	
+	"instanceNameFormat": "Stop windows service $(resourceName) on $(clusterName)",
+	"inputs": [
+		{
+			"name": "clusterName",
+			"type": "string",
+			"label": "Cluster Name",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "Name of the cluster."
+		},
+		{
+			"name": "resourceName",
+			"type": "string",
+			"label": "Service Name",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "Name of the Windows Service (this is not always the display name)."
+		},
+		{
+            "name": "waitTimeoutInSeconds",
+            "type": "string",
+            "label": "Wait timeout",
+            "defaultValue": "30",
+            "required": true,
+            "helpMarkDown": "The length of time, in seconds, that the task should wait for the resource to go offline."
+        }
+	],
+	"execution": {
+		"PowerShell": {
+			"target": "$(currentDirectory)\\StopGenericServiceCluster.ps1",
+			"argumentFormat": "",
+			"workingDirectory": "$(currentDirectory)"
+		}
+	}
+}
