@@ -53,28 +53,50 @@
 		"uri": "https://github.com/gandarez/VSTS.ClusterServiceTasks"
 	},
 	"files": [
-		{ "path": "StartGenericServiceCluster" },
-		{ "path": "StopGenericServiceCluster" }			
+		{ "path": "BringOnlineResourceCluster" },
+		{ "path": "TakeOfflineResourceCluster" },
+		{ "path": "AddDependencyBetweenResourcesCluster" },
+		{ "path": "RemoveDependencyBetweenResourcesCluster" }
 	],
 	"contributions": [
 		{
-			"id": "ClusterServiceTasks-StartGenericWinServiceCluster",
+			"id": "ClusterServiceTasks-BringOnlineResourceCluster",
 			"type": "ms.vss-distributed-task.task",
 			"targets": [
 				"ms.vss-distributed-task.tasks"
 			],
 			"properties": {
-				"name": "StartGenericServiceCluster"
+				"name": "BringOnlineResourceCluster"
 			}
 		},
 		{
-			"id": "ClusterServiceTasks-StopGenericWinServiceCluster",
+			"id": "ClusterServiceTasks-TakeOfflineResourceCluster",
 			"type": "ms.vss-distributed-task.task",
 			"targets": [
 				"ms.vss-distributed-task.tasks"
 			],
 			"properties": {
-				"name": "StopGenericServiceCluster"
+				"name": "TakeOfflineResourceCluster"
+			}
+		},
+		{
+			"id": "ClusterServiceTasks-AddDependencyBetweenResourcesCluster",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "AddDependencyBetweenResourcesCluster"
+			}
+		},
+		{
+			"id": "ClusterServiceTasks-RemoveDependencyBetweenResourcesCluster",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "RemoveDependencyBetweenResourcesCluster"
 			}
 		}
 	]

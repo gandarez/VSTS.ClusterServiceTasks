@@ -8,5 +8,5 @@ Param(
 import-module "Microsoft.TeamFoundation.DistributedTask.Task.Common"
 
 Write-Host "Stopping $resourceName on $clusterName"
-$service = Get-WmiObject -Computer "$clusterName" -namespace 'root\mscluster' `MSCluster_Resource | Where {$_.Name -eq "$resourceName"}
-$service.TakeOffline($waitTimeoutInSeconds)
+$resource = Get-WmiObject -Computer "$clusterName" -namespace 'root\mscluster' `MSCluster_Resource | Where {$_.Name -eq "$resourceName"}
+$resource.TakeOffline($waitTimeoutInSeconds)

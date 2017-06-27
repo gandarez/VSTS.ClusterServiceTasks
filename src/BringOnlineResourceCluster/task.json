@@ -1,8 +1,8 @@
 {
-	"id": "27eefdc3-c314-41af-8820-d6f58925963b",
-	"name": "StartGenericServiceCluster",
-	"friendlyName": "Windows Service Cluster - Start",
-	"description": "Start a windows service in a cluster service",
+	"id": "76c93cc3-da2b-4f78-895b-aabbfd4ef216",
+	"name": "BringResourceOnlineCluster",
+	"friendlyName": "Cluster - Bring Resource Online",
+	"description": "Brings the resource online in a cluster service",
 	"author": "Carlos Henrique Gandarez",
 	"helpMarkDown": "",
 	"category": "Deploy",
@@ -14,7 +14,7 @@
 		"Minor": "0",
 		"Patch": "0"
 	},	
-	"instanceNameFormat": "Start windows service $(resourceName) on $(clusterName)",
+	"instanceNameFormat": "Bring $(resourceName) online on $(clusterName)",
 	"inputs": [
 		{
 			"name": "clusterName",
@@ -27,15 +27,15 @@
 		{
 			"name": "resourceName",
 			"type": "string",
-			"label": "Service Name",
+			"label": "Resource Name",
 			"defaultValue": "",
 			"required": true,
-			"helpMarkDown": "Name of the Windows Service (this is not always the display name)."
+			"helpMarkDown": "Name of the resource."
 		},
 		{
             "name": "WaitTimeoutInSeconds",
             "type": "string",
-            "label": "Wait timeout",
+            "label": "Wait Timeout",
             "defaultValue": "30",
             "required": true,
             "helpMarkDown": "The length of time, in seconds, that the task should wait for the resource to come online."
@@ -43,7 +43,7 @@
 	],
 	"execution": {
 		"PowerShell": {
-			"target": "$(currentDirectory)\\StartGenericServiceCluster.ps1",
+			"target": "$(currentDirectory)\\BringOnlineResourceCluster.ps1",
 			"argumentFormat": "",
 			"workingDirectory": "$(currentDirectory)"
 		}

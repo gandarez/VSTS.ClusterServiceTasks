@@ -1,8 +1,8 @@
 {
-	"id": "20d6a573-760f-4cd3-94c9-294ad0faf36f",
-	"name": "StopGenericServiceCluster",
-	"friendlyName": "Windows Service Cluster - Stop",
-	"description": "Stop a windows service in a cluster service",
+	"id": "be620d97-ebe9-4dc7-89fb-f594bc98428d",
+	"name": "TakeOfflineResourceCluster",
+	"friendlyName": "Cluster - Take Resource Offline",
+	"description": "Takes the resource offline in a cluster service",
 	"author": "Carlos Henrique Gandarez",
 	"helpMarkDown": "",
 	"category": "Deploy",
@@ -14,7 +14,7 @@
 		"Minor": "0",
 		"Patch": "0"
 	},	
-	"instanceNameFormat": "Stop windows service $(resourceName) on $(clusterName)",
+	"instanceNameFormat": "Take $(resourceName) offline on $(clusterName)",
 	"inputs": [
 		{
 			"name": "clusterName",
@@ -27,15 +27,15 @@
 		{
 			"name": "resourceName",
 			"type": "string",
-			"label": "Service Name",
+			"label": "Resource Name",
 			"defaultValue": "",
 			"required": true,
-			"helpMarkDown": "Name of the Windows Service (this is not always the display name)."
+			"helpMarkDown": "Name of the resource."
 		},
 		{
             "name": "waitTimeoutInSeconds",
             "type": "string",
-            "label": "Wait timeout",
+            "label": "Wait Timeout",
             "defaultValue": "30",
             "required": true,
             "helpMarkDown": "The length of time, in seconds, that the task should wait for the resource to go offline."
@@ -43,7 +43,7 @@
 	],
 	"execution": {
 		"PowerShell": {
-			"target": "$(currentDirectory)\\StopGenericServiceCluster.ps1",
+			"target": "$(currentDirectory)\\TakeOfflineResourceCluster.ps1",
 			"argumentFormat": "",
 			"workingDirectory": "$(currentDirectory)"
 		}

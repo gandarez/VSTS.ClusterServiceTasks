@@ -1,9 +1,11 @@
 # Tasks for cluster service (VSTS/TFS task)
-Toolbox of tasks for cluster service
+A collection of tasks to manage resources in a cluster service.
 
-### Services
-- Start Windows Service
-- Stop Windows Service
+### Tasks
+- **BringOnlineResourceCluster**
+- **TakeOfflineResourceCluster**
+- **AddDependencyBetweenResourcesCluster**
+- **RemoveDependencyBetweenResourcesCluster**
 
 ### Contributing
-Fork, commit a PR and get it released.
+Fork, commit, submit PR and get it merged.
