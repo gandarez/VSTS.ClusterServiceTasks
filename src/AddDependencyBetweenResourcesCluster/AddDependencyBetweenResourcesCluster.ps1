@@ -10,4 +10,11 @@ import-module "Microsoft.TeamFoundation.DistributedTask.Task.Common"
 
 Write-Host "Adding dependency between $resourceName and $resourceDependent on $clusterName"
 $resource = Get-WmiObject -Computer "$clusterName" -namespace 'root\mscluster' `MSCluster_Resource | Where {$_.Name -eq "$resourceName"}
+
+if(!$resource)
+{
+    Write-Host "Resource $resourceName not found on $clusterName"
+    return 1    
+}
+
 $resource.AddDependency($resourceDependent)
